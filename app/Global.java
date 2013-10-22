@@ -18,26 +18,17 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
 *******************************************************************************/
-package controllers;
-
-import play.mvc.Controller;
-import play.mvc.Result;
-
-import views.html.index;
+import play.Application;
+import play.GlobalSettings;
 
 /**
- * Main controller for the application
+ * Global class
+ * See play framework documentation for more details
  * @author malik
  *
  */
-public class Application extends Controller {
-
-	/**
-	 * Display index page
-	 * @return ok(index)
-	 */
-    public static Result index() {
-        return ok(index.render());
-    }
-
+public class Global extends GlobalSettings{
+	@Override
+	public void onStart(Application app) {
+	}
 }

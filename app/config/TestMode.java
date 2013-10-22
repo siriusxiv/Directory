@@ -18,26 +18,20 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
 *******************************************************************************/
-package controllers;
-
-import play.mvc.Controller;
-import play.mvc.Result;
-
-import views.html.index;
+package config;
 
 /**
- * Main controller for the application
- * @author malik
+ * Test related functions
+ * @author Admin
  *
  */
-public class Application extends Controller {
-
+public class TestMode {
+	
 	/**
-	 * Display index page
-	 * @return ok(index)
+	 * Checks whether check mode is enabled or not
+	 * @return true or false
 	 */
-    public static Result index() {
-        return ok(index.render());
-    }
-
+	public static boolean isEnabled(){
+		return Config.getString("test").equals("yes");
+	}
 }

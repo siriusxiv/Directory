@@ -18,26 +18,24 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
 *******************************************************************************/
-package controllers;
+package config;
 
-import play.mvc.Controller;
-import play.mvc.Result;
-
-import views.html.index;
+import play.Play;
 
 /**
- * Main controller for the application
+ * Just there to load info from application.conf more quickly
  * @author malik
  *
  */
-public class Application extends Controller {
-
+public class Config {
+	
 	/**
-	 * Display index page
-	 * @return ok(index)
+	 * Get the value of arg0 inside the application.conf file
+	 * and return it as a string
+	 * @param arg0
+	 * @return string value of arg0
 	 */
-    public static Result index() {
-        return ok(index.render());
-    }
-
+	public static String getString(String arg0){
+		return Play.application().configuration().getString(arg0);
+	}
 }
